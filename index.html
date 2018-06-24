@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>HSS 403 Final Project | Joshua Vega</title>
+
+    <style>
+      h1 {
+        text-align: center;
+      }
+
+      div {
+        text-align: center;
+      }
+
+      fieldset {
+        border: 0;
+      }
+
+      #vocabulary_label_1, #vocabulary_label_2 {
+        text-align: right;
+      }
+
+      #vocabulary_label_1 {
+        padding-right: 1em;
+      }
+
+      #vocabulary_label_2 {
+        padding-left: 5em;
+        padding-right: 1em;
+      }
+
+      table {
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>IBM Poem Creator<br /><small><em>by Joshua Vega</em></small></h1>
+
+    <div>
+      <input type="radio" id="vocabulary_type_custom" name="vocabulary_type" value="custom" checked />
+      <label for="vocabulary_custom">Custom Vocabulary</label>
+      
+      <input type="radio" id="vocabulary_type_premade" name="vocabulary_type" value="premade" />
+      <label for="vocabulary_premade">Pre-Made Vocabulary</label>
+
+      <br />
+      <br />
+
+      <select id="vocabulary_list" name="vocabulary_list" disabled required>
+        <option value="" selected disabled></option>
+        <option value="water">The Water</option>
+        <option value="motoring">Motoring</option>
+        <option value="park">The Park</option>
+        <option value="airport">The Airport</option>
+      </select>
+
+      <br />
+
+      <p>Clicking "Generate Vocabulary" will generate a new random vocabulary each time.</p>
+
+      <button id="generate-vocabulary" disabled>Generate Vocabulary</button>
+      <button id="clear-vocabulary">Clear Vocabulary</button>
+
+      <br />
+      <br />
+
+      <table id="vocabulary">
+        <tr>
+          <td id="vocabulary_label_1">A =</td>
+          <td><input type="text" id="vocabulary_entry" name="vocabulary[a]" /></td>
+          <td id="vocabulary_label_2">N =</td>
+          <td><input type="text" id="vocabulary_entry" name="vocabulary[n]" /></td>
+        </tr>
+        <tr>
+          <td id="vocabulary_label_1">B =</td>
+          <td><input type="text" id="vocabulary_entry" name="vocabulary[b]" /></td>
+          <td id="vocabulary_label_2">O =</td>
+          <td><input type="text" id="vocabulary_entry" name="vocabulary[o]" /></td>
+        </tr>
+        <tr>
+          <td id="vocabulary_label_1">C =</td>
+          <td><input type="text" id="vocabulary_entry" name="vocabulary[c]" /></td>
+          <td id="vocabulary_label_2">P =</td>
+          <td><input type="text" id="vocabulary_entry" name="vocabulary[p]" /></td>
+        </tr>
+        <tr>
+          <td id="vocabulary_label_1">D =</td>
+          <td><input type="text" id="vocabulary_entry" name="vocabulary[d]" /></td>
+          <td id="vocabulary_label_2">Q =</td>
+          <td><input type="text" id="vocabulary_entry" name="vocabulary[q]" /></td>
+        </tr>
+        <tr>
+          <td id="vocabulary_label_1">E =</td>
+          <td><input type="text" id="vocabulary_entry" name="vocabulary[e]" /></td>
+          <td id="vocabulary_label_2">R =</td>
+          <td><input type="text" id="vocabulary_entry" name="vocabulary[r]" /></td>
+        </tr>
+        <tr>
+          <td id="vocabulary_label_1">F =</td>
+          <td><input type="text" id="vocabulary_entry" name="vocabulary[f]" /></td>
+          <td id="vocabulary_label_2">S =</td>
+          <td><input type="text" id="vocabulary_entry" name="vocabulary[s]" /></td>
+        </tr>
+        <tr>
+          <td id="vocabulary_label_1">G =</td>
+          <td><input type="text" id="vocabulary_entry" name="vocabulary[g]" /></td>
+          <td id="vocabulary_label_2">T =</td>
+          <td><input type="text" id="vocabulary_entry" name="vocabulary[t]" /></td>
+        </tr>
+        <tr>
+          <td id="vocabulary_label_1">H =</td>
+          <td><input type="text" id="vocabulary_entry" name="vocabulary[h]" /></td>
+          <td id="vocabulary_label_2">U =</td>
+          <td><input type="text" id="vocabulary_entry" name="vocabulary[u]" /></td>
+        </tr>
+        <tr>
+          <td id="vocabulary_label_1">I =</td>
+          <td><input type="text" id="vocabulary_entry" name="vocabulary[i]" /></td>
+          <td id="vocabulary_label_2">V =</td>
+          <td><input type="text" id="vocabulary_entry" name="vocabulary[v]" /></td>
+        </tr>
+        <tr>
+          <td id="vocabulary_label_1">J =</td>
+          <td><input type="text" id="vocabulary_entry" name="vocabulary[j]" /></td>
+          <td id="vocabulary_label_2">W =</td>
+          <td><input type="text" id="vocabulary_entry" name="vocabulary[w]" /></td>
+        </tr>
+        <tr>
+          <td id="vocabulary_label_1">K =</td>
+          <td><input type="text" id="vocabulary_entry" name="vocabulary[k]" /></td>
+          <td id="vocabulary_label_2">X =</td>
+          <td><input type="text" id="vocabulary_entry" name="vocabulary[x]" /></td>
+        </tr>
+        <tr>
+          <td id="vocabulary_label_1">L =</td>
+          <td><input type="text" id="vocabulary_entry" name="vocabulary[l]" /></td>
+          <td id="vocabulary_label_2">Y =</td>
+          <td><input type="text" id="vocabulary_entry" name="vocabulary[y]" /></td>
+        </tr>
+        <tr>
+          <td id="vocabulary_label_1">M =</td>
+          <td><input type="text" id="vocabulary_entry" name="vocabulary[m]" /></td>
+          <td id="vocabulary_label_2">Z =</td>
+          <td><input type="text" id="vocabulary_entry" name="vocabulary[z]" /></td>
+        </tr>
+      </table>
+
+      <br />
+
+      <label for="initial_seed">Initial 3 letter seed</label><br />
+      <input type="text" id="initial_seed" name="initial_seed" />
+
+      <br />
+      <br />
+
+      <button id="create-poem">Create Poem</button>
+
+      <br />
+      <br />
+      <hr />
+    </div>
+
+    <p id="poem-title"></p>
+    <p id="poem-body"></p>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
